@@ -1,3 +1,11 @@
+import json
+
+# Open the JSON file for reading
+with open('calculator_messages.json', 'r') as file:
+    MESSAGES = json.load(file)
+
+# Now 'data' contains the contents of the JSON file as a Python dictionary or list
+
 def prompt(message):
     print(f"==> {message}")
 
@@ -9,29 +17,29 @@ def invalid_number(number_str):
 
     return False
 
-prompt('Welcome to Calculator!')
+prompt(MESSAGES['welcome'])
 
 while True:
 
-    prompt("What's the first number?")
+    prompt(MESSAGES['first_number'])
     number1 = input()
 
     while invalid_number(number1):
-        prompt("Hmm... that doesn't look like a valid number.")
+        prompt(MESSAGES['invalid_number'])
         number1 = input()
 
-    prompt("What's the second number?")
+    prompt(MESSAGES['second_number'])
     number2 = input()
 
     while invalid_number(number2):
-        prompt("Hmm... that doesn't look like a valid number.")
+        prompt(MESSAGES['invalid_number'])
         number2 = input()
 
-    prompt("What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide")
+    prompt(MESSAGES['operation'])
     operation = input()
 
     while operation not in ["1", "2", "3", "4"]:
-        prompt("You must choose 1, 2, 3, or 4")
+        prompt(MESSAGES['choose1234'])
         operation = input()
 
     match operation:
@@ -44,12 +52,12 @@ while True:
         case "4":
             output = int(number1) / int(number2)
 
-    prompt(f"The result is {output}")
+    prompt(f"{MESSAGES['result']} {output}")
 
-    prompt('Do you want to do another calculation? (y/n): ')
+    prompt(MESSAGES['another_calc'])
     again = input()
     if again and again.lower() == 'y':
-        prompt("Great. Let's go again!")
+        prompt(MESSAGES['go_again'])
         continue
     else:
         break
