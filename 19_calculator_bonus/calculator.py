@@ -6,8 +6,8 @@ with open('calculator_messages.json', 'r') as file:
 
 # Now 'data' contains the contents of the JSON file as a Python dictionary or list
 
-def prompt(message):
-    print(f"==> {message}")
+# def prompt(message):
+#     print(f"==> {message}")
 
 def invalid_number(number_str):
     try:
@@ -17,29 +17,45 @@ def invalid_number(number_str):
 
     return False
 
-prompt(MESSAGES['welcome'])
+print("Which language is better, English or Chinese? ")
+language_code = ""
+language = input()
+if language == 'English':
+    language_code = "en"
+else:
+    language_code = "zh"
+
+def messages(message, language_code):
+    return MESSAGES[language_code][message]
+
+def prompt(key):
+    message = messages(key, language_code)
+    print(f"==> {message}")
+
+prompt('welcome')
+# prompt(MESSAGES[language_code]['welcome'])
 
 while True:
 
-    prompt(MESSAGES['first_number'])
+    prompt('first_number')
     number1 = input()
 
     while invalid_number(number1):
-        prompt(MESSAGES['invalid_number'])
+        prompt('invalid_number')
         number1 = input()
 
-    prompt(MESSAGES['second_number'])
+    prompt('second_number')
     number2 = input()
 
     while invalid_number(number2):
-        prompt(MESSAGES['invalid_number'])
+        prompt('invalid_number')
         number2 = input()
 
-    prompt(MESSAGES['operation'])
+    prompt('operation')
     operation = input()
 
     while operation not in ["1", "2", "3", "4"]:
-        prompt(MESSAGES['choose1234'])
+        prompt('choose1234')
         operation = input()
 
     match operation:
@@ -52,12 +68,13 @@ while True:
         case "4":
             output = int(number1) / int(number2)
 
-    prompt(f"{MESSAGES['result']} {output}")
+    print(f"{MESSAGES[language_code]['result']} {output}")
 
-    prompt(MESSAGES['another_calc'])
+
+    prompt('another_calc')
     again = input()
     if again and again.lower() == 'y':
-        prompt(MESSAGES['go_again'])
+        prompt('go_again')
         continue
     else:
         break

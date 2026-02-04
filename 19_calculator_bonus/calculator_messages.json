@@ -1,11 +1,26 @@
 {
-    "welcome": "Welcome to Calculator!",
-    "first_number": "What's the first number?",
-    "invalid_number": "Hmm... that doesn't look like a valid number.",
-    "second_number": "What's the second number?",
-    "operation": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
-    "choose1234": "You must choose 1, 2, 3, or 4",
-    "result": "The result is",
-    "another_calc": "Do you want to do another calculation? (y/n): ",
-    "go_again": "Great. Let's go again!"
+    "en": 
+        {
+            "welcome": "Welcome to Calculator!",
+            "first_number": "What's the first number?",
+            "invalid_number": "Hmm... that doesn't look like a valid number.",
+            "second_number": "What's the second number?",
+            "operation": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+            "choose1234": "You must choose 1, 2, 3, or 4",
+            "result": "The result is",
+            "another_calc": "Do you want to do another calculation? (y/n): ",
+            "go_again": "Great. Let's go again!"
+        },
+    "zh":
+        {
+            "welcome": "欢迎使用计算器！",
+            "first_number": "第一个数字是什么？",
+            "invalid_number": "嗯...这看起来不是一个有效的数字。",
+            "second_number": "第二个数字是什么？",
+            "operation": "您想执行什么运算？\n1) 加法 2) 减法 3) 乘法 4) 除法",
+            "choose1234": "您必须选择 1、2、3 或 4",
+            "result": "结果是",
+            "another_calc": "您想再做一次计算吗？(y/n): ",
+            "go_again": "太好了。我们再来一次！"
+        }
 }
