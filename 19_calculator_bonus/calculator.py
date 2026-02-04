@@ -33,7 +33,6 @@ def prompt(key):
     print(f"==> {message}")
 
 prompt('welcome')
-# prompt(MESSAGES[language_code]['welcome'])
 
 while True:
 
