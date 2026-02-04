@@ -28,11 +28,11 @@ else:
 def messages(message, language_code):
     return MESSAGES[language_code][message]
 
-def prompt(key):
+def prompt(key, language_code):
     message = messages(key, language_code)
     print(f"==> {message}")
 
-prompt('welcome')
+prompt('welcome', language_code)
 
 while True:
 
