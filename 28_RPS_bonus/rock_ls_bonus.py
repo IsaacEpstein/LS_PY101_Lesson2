@@ -1,6 +1,6 @@
 '''
 Docstring for rock_ls_bonus.
-Rock paper scissors lizard spock game
+Rock paper scissors lizard spock game 
 '''
 
 import random
